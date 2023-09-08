@@ -39,7 +39,7 @@ function game() {
     let computer = computerSelection();
 
     if (user === "Rock" && computer === "Paper") {
-        console.log("Its a lose");
+        console.log("You Lose");
         return "You lose";
     } else if (user === "Rock" && computer === "Scissors") {
         console.log("You win");
@@ -58,7 +58,34 @@ function game() {
         return "Try again";
     }
 }
-game();
+// game();
+
+function gameRound() {
+    let userScore = 0;
+    let computerScore = 0;
+    let round = 0;
+
+    for(let i = 1; i <= 5; i++) {
+        let start = game();
+
+        if (start === "You win") {
+            userScore++;
+            round++;
+            console.log(`Round : ${round}  userScore ${userScore} : computerScore ${computerScore}`);
+        } else if (start === "You Lose") {
+            computerScore++;
+            round++;
+            console.log(`Round: ${round}  userScore ${userScore} : computerScore ${computerScore}`);
+        } else if (start === "tie") {
+            round++;
+            console.log(`Round: ${round}  userScore ${userScore} : computerScore ${computerScore}`);
+        }else {
+            console.log("Try again");
+            break;
+        }
+    }
+}
+gameRound();
 
 
 // const playerSelection = newUser();
