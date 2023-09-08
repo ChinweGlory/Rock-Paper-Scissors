@@ -14,6 +14,23 @@ function playRound(playerSelection, computerSelection) {
 
 }
 
+function game() {
+    let user = playerSelection();
+    let computer = computerSelection();
+
+    if (user === "Rock" && computer === "rock") {
+        console.log("Its a tie");
+    } else if (user === "Rock" && computer === "Scissors") {
+        console.log("You win");
+    } else if (user === "Scissors" && computer === "Paper") {
+        console.log("You win");
+    }else if (user === "Rock" && computer === "Paper") {
+        console.log("You Lose");
+    }else {
+        console.log("Try again");
+        return "Start again";
+    }
+}
 
 const playerSelection = "rock";
 const computerSelection = getComputerChoice();
